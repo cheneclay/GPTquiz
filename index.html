@@ -29,6 +29,8 @@
   .tag { display:inline-block; font-size:12px; padding:4px 8px; border-radius:999px; background:#f1f2ff; color:#2732ff; margin-bottom:10px; }
   footer { text-align:center; color:#666; font-size:13px; margin-top:24px; }
   #winnerBlock { border-left:6px solid #3b5bff; padding-left:14px; }
+  #lightning { display:none; border:2px dashed #c9ceff; background:#f6f7ff; }
+  #tieNotice { font-size:14px; color:#3b5bff; margin:0 0 10px; font-weight:600; }
 </style>
 </head>
 <body>
@@ -40,74 +42,91 @@
 <div class="wrap">
   <form id="quiz" class="card">
     <!-- Q1 -->
-    <div class="q">1) Pick a bread:</div>
+    <div class="q">1) Pick a bread</div>
     <div class="opts">
-      <label><input type="radio" name="q1" value="Juniper">Garlic naan</label>
-      <label><input type="radio" name="q1" value="Maple">Banana bread</label>
-      <label><input type="radio" name="q1" value="Spruce">Whole grain (because “fiber”)</label>
-      <label><input type="radio" name="q1" value="Verse">Baguette you’ll definitely smack someone with</label>
-      <label><input type="radio" name="q1" value="Ember">Sourdough starter you “totally keep alive”</label>
-      <label><input type="radio" name="q1" value="Breeze">Fluffy milk bread that tastes like a nap</label>
+      <label><input type="radio" name="q1" value="Juniper">Garlic bread that mysteriously vanishes before dinner</label>
+      <label><input type="radio" name="q1" value="Arbor">A suspicious “organic” loaf that costs $9 but you bought it anyway</label>
+      <label><input type="radio" name="q1" value="Verse">A baguette you only got so you could hit someone with it like a sword</label>
+      <label><input type="radio" name="q1" value="Cove">Gluten-free bread you pretend to enjoy</label>
+      <label><input type="radio" name="q1" value="Maple">Cinnamon raisin swirl you swear isn’t dessert</label>
+      <label><input type="radio" name="q1" value="Sol">Protein-packed bread that tastes like drywall but “fuels you”</label>
     </div>
     <hr>
 
     <!-- Q2 -->
-    <div class="q">2) Your toxic trait is:</div>
+    <div class="q">2) Your toxic trait is…</div>
     <div class="opts">
-      <label><input type="radio" name="q2" value="Sol">Believing you’d thrive on <i>Survivor</i> despite crying when your phone dies</label>
-      <label><input type="radio" name="q2" value="Arbor">Offering to “glance at” someone’s résumé and doing a full rewrite</label>
-      <label><input type="radio" name="q2" value="Cove">Texting with perfect punctuation at alarming speeds</label>
-      <label><input type="radio" name="q2" value="Ember">Editing other people’s grammar in texts</label>
-      <label><input type="radio" name="q2" value="Maple">Saying “I’m fine :)” when you are not fine :)</label>
-      <label><input type="radio" name="q2" value="Verse">Sending five TikToks before they finish the first one</label>
+      <label><input type="radio" name="q2" value="Juniper">Always starting hobbies then ghosting them</label>
+      <label><input type="radio" name="q2" value="Ember">Making detailed itineraries for “relaxing” vacations</label>
+      <label><input type="radio" name="q2" value="Sol">Clapping when the plane lands</label>
+      <label><input type="radio" name="q2" value="Maple">Saying “I don’t care” but absolutely caring</label>
+      <label><input type="radio" name="q2" value="Breeze">Replying to texts in your head but never sending them</label>
+      <label><input type="radio" name="q2" value="Arbor">Alphabetizing your spice rack for “fun”</label>
     </div>
     <hr>
 
     <!-- Q3 -->
-    <div class="q">3) Pick your vacation vibe:</div>
+    <div class="q">3) Dream vacation vibe?</div>
     <div class="opts">
-      <label><input type="radio" name="q3" value="Arbor">Cozy cabin with too many blankets</label>
-      <label><input type="radio" name="q3" value="Cove">Beach cottage with no cell service</label>
-      <label><input type="radio" name="q3" value="Spruce">Backpacking trip with “accidentally” too much gear</label>
-      <label><input type="radio" name="q3" value="Sol">Vegas, baby (asleep by 10:30)</label>
-      <label><input type="radio" name="q3" value="Ember">Historical walking tour you forced friends to join</label>
-      <label><input type="radio" name="q3" value="Breeze">Mountain town where the main activity is… vibes</label>
+      <label><input type="radio" name="q3" value="Spruce">National park trip but forgetting bug spray</label>
+      <label><input type="radio" name="q3" value="Arbor">All-inclusive resort where you silently judge the buffet</label>
+      <label><input type="radio" name="q3" value="Ember">Backpacking trip you only agreed to for the aesthetic pics</label>
+      <label><input type="radio" name="q3" value="Sol">Disney trip where you aggressively optimize Genie+</label>
+      <label><input type="radio" name="q3" value="Juniper">Beach trip where you mysteriously befriend locals for free drinks</label>
+      <label><input type="radio" name="q3" value="Cove">A cabin where the Wi-Fi doesn’t work but you insist that’s “the point”</label>
     </div>
     <hr>
 
     <!-- Q4 -->
-    <div class="q">4) Choose a snack:</div>
+    <div class="q">4) Pick a snack</div>
     <div class="opts">
-      <label><input type="radio" name="q4" value="Juniper">Leftover pizza, cold, at 9 a.m.</label>
-      <label><input type="radio" name="q4" value="Maple">Popcorn “for dinner”</label>
-      <label><input type="radio" name="q4" value="Cove">Suspiciously perfect smoothie bowl</label>
-      <label><input type="radio" name="q4" value="Spruce">Trail mix but all the M&amp;Ms are gone</label>
-      <label><input type="radio" name="q4" value="Arbor">Apple slices with methodically portioned peanut butter</label>
-      <label><input type="radio" name="q4" value="Verse">Charcuterie board that’s 80% drama, 20% cheese</label>
+      <label><input type="radio" name="q4" value="Juniper">A family-size bag of chips you swore you’d “just sample”</label>
+      <label><input type="radio" name="q4" value="Maple">A perfectly peeled orange someone else cut for you</label>
+      <label><input type="radio" name="q4" value="Verse">A charcuterie board that is 75% crackers, 25% vibes</label>
+      <label><input type="radio" name="q4" value="Spruce">A protein bar you hate but keep buying</label>
+      <label><input type="radio" name="q4" value="Sol">Popcorn that ends up in your shirt, couch, and soul</label>
+      <label><input type="radio" name="q4" value="Breeze">Fancy chocolate you ration like it’s WWII</label>
     </div>
     <hr>
 
     <!-- Q5 -->
     <div class="q">5) How do you clap when something’s funny?</div>
     <div class="opts">
-      <label><input type="radio" name="q5" value="Sol">Hands fully above your head like you’re summoning rain</label>
-      <label><input type="radio" name="q5" value="Juniper">Laugh-crying so hard you can’t clap at all</label>
-      <label><input type="radio" name="q5" value="Breeze">Polite two-tap golf clap</label>
-      <label><input type="radio" name="q5" value="Ember">Slow clap that somehow feels literary</label>
-      <label><input type="radio" name="q5" value="Maple">Gentle clap + sincere “awww”</label>
-      <label><input type="radio" name="q5" value="Spruce">The one loud clap that silences the room</label>
+      <label><input type="radio" name="q5" value="Cove">That weird inhale laugh that sounds like a tea kettle</label>
+      <label><input type="radio" name="q5" value="Spruce">The one loud clap that scares everyone else</label>
+      <label><input type="radio" name="q5" value="Juniper">Wheeze-laughing until you can’t breathe</label>
+      <label><input type="radio" name="q5" value="Arbor">Polite “haha” and then changing the subject</label>
+      <label><input type="radio" name="q5" value="Verse">Dramatic slow clap like you’re in a bad teen movie</label>
+      <label><input type="radio" name="q5" value="Maple">Giggles that turn into tears and hiccups</label>
     </div>
     <hr>
 
-    <!-- Q6 (tie-break weighted slightly) -->
+    <!-- Q6 -->
     <div class="q">6) What’s your group chat energy?</div>
     <div class="opts">
-      <label><input type="radio" name="q6" value="Cove">“Let’s unpack this” + calendar link</label>
-      <label><input type="radio" name="q6" value="Arbor">Bullet points, action items, done by noon</label>
-      <label><input type="radio" name="q6" value="Sol">GIFs only, managerial vibes</label>
-      <label><input type="radio" name="q6" value="Verse">Delivering a 10-part saga with plot twists</label>
-      <label><input type="radio" name="q6" value="Breeze">Drops a wholesome check-in then vanishes</label>
-      <label><input type="radio" name="q6" value="Juniper">Unhinged voice notes at 1:47 a.m.</label>
+      <label><input type="radio" name="q6" value="Juniper">Dropping memes at 2 a.m. and then disappearing</label>
+      <label><input type="radio" name="q6" value="Arbor">Sharing three inspirational quotes before 8 a.m.</label>
+      <label><input type="radio" name="q6" value="Sol">Being the one who makes a poll about literally everything</label>
+      <label><input type="radio" name="q6" value="Breeze">Accidentally texting in the wrong group and refusing to explain</label>
+      <label><input type="radio" name="q6" value="Ember">Copy-pasting Wikipedia paragraphs mid-argument</label>
+      <label><input type="radio" name="q6" value="Verse">Reacting with 🔥 and 💀 no matter the context</label>
+    </div>
+
+    <!-- SECRET: Q7 Lightning Round (shown only on tie) -->
+    <div id="lightning" class="card" style="margin-top:18px;">
+      <div id="tieNotice">Tie detected! Lightning Round: choose your destiny ⚡️</div>
+      <div class="q">7) You walk into a party. What’s your move?</div>
+      <div class="opts">
+        <label><input type="radio" name="q7" value="Maple">Head straight to the snack table and construct architectural nachos</label>
+        <label><input type="radio" name="q7" value="Verse">Start telling a story you won’t finish for 20 minutes</label>
+        <label><input type="radio" name="q7" value="Juniper">Adopt the host’s dog as your own and leave with three new best friends</label>
+        <label><input type="radio" name="q7" value="Arbor">Casually fix the wobbly table and organize the cups by color</label>
+        <label><input type="radio" name="q7" value="Cove">Ask the bartender if they “do mocktails” and compliment the glassware</label>
+        <label><input type="radio" name="q7" value="Spruce">Suggest a board game no one knows the rules to and read the manual</label>
+        <label><input type="radio" name="q7" value="Ember">Quote your favorite movie before anyone’s ready</label>
+        <label><input type="radio" name="q7" value="Sol">Make a dad joke that makes three people groan and one person clap</label>
+        <label><input type="radio" name="q7" value="Breeze">Wave at strangers like you already know them, then check on the pet</label>
+      </div>
     </div>
 
     <div class="actions">
@@ -160,27 +179,25 @@ const DESCRIPTIONS_SHORT = {
 };
 
 const ALL = Object.keys(DESCRIPTIONS_LONG);
-// last question slightly higher weight for tie-break:
-const WEIGHTS = { q1:1, q2:1, q3:1, q4:1, q5:1, q6:1.15 };
 
-function calcScores() {
+// helper: score the first 6 (no weights)
+function calcBaseScores() {
   const scores = Object.fromEntries(ALL.map(v => [v, 0]));
   const form = document.getElementById('quiz');
-  const fields = Object.keys(WEIGHTS);
+  const fields = ['q1','q2','q3','q4','q5','q6'];
   for (const name of fields) {
     const chosen = form.querySelector(`input[name="${name}"]:checked`);
-    if (chosen) scores[chosen.value] += WEIGHTS[name];
+    if (chosen) scores[chosen.value] += 1;
   }
   return scores;
 }
 
-function topVoice(scores) {
-  // pick highest; if still tied numerically, choose the one that comes first
-  let best = ALL[0], bestVal = -Infinity;
-  for (const v of ALL) {
-    if (scores[v] > bestVal) { best = v; bestVal = scores[v]; }
-  }
-  return best;
+// return array of voices tied for top
+function topTies(scores) {
+  let max = -Infinity;
+  for (const v of ALL) max = Math.max(max, scores[v]);
+  const leaders = ALL.filter(v => scores[v] === max);
+  return { leaders, max };
 }
 
 function renderAll(scores) {
@@ -198,18 +215,64 @@ function renderAll(scores) {
   }
 }
 
-document.getElementById('seeResults').addEventListener('click', () => {
-  const scores = calcScores();
-  const winner = topVoice(scores);
+let tieMode = false;
+let cachedBaseScores = null;
+
+function showResults(finalScores) {
+  const { leaders } = topTies(finalScores);
+  // choose first alphabetically if somehow still tied after Q7
+  leaders.sort();
+  const winner = leaders[0];
   document.getElementById('topVoice').textContent = winner;
   document.getElementById('blurb').textContent = DESCRIPTIONS_LONG[winner];
-  renderAll(scores);
+  renderAll(finalScores);
   document.getElementById('results').classList.add('show');
   document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+
+document.getElementById('seeResults').addEventListener('click', () => {
+  const btn = document.getElementById('seeResults');
+
+  if (!tieMode) {
+    // first pass: score Q1-6
+    const base = calcBaseScores();
+    cachedBaseScores = base;
+    const { leaders } = topTies(base);
+
+    if (leaders.length > 1) {
+      // tie! reveal lightning round
+      tieMode = true;
+      document.getElementById('lightning').style.display = 'block';
+      btn.textContent = 'Finish (Break the tie)';
+      document.getElementById('lightning').scrollIntoView({behavior:'smooth'});
+      return;
+    } else {
+      // clear winner
+      showResults(base);
+      return;
+    }
+  } else {
+    // tie mode: require q7
+    const choice = document.querySelector('input[name="q7"]:checked');
+    if (!choice) {
+      alert('Pick one Lightning Round answer to break the tie!');
+      return;
+    }
+    const final = { ...cachedBaseScores };
+    final[choice.value] += 0.5; // tiny nudge to guarantee a winner, without rewriting earlier answers
+    showResults(final);
+  }
 });
 
 document.getElementById('reset').addEventListener('click', () => {
   document.getElementById('results').classList.remove('show');
+  document.getElementById('lightning').style.display = 'none';
+  document.getElementById('seeResults').textContent = 'See my result';
+  tieMode = false;
+  cachedBaseScores = null;
+  // also clear q7 choice
+  const q7 = document.querySelector('input[name="q7"]:checked');
+  if (q7) q7.checked = false;
 });
 
 document.getElementById('copy').addEventListener('click', async () => {
