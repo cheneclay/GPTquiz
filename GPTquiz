@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Which ChatGPT Voice Are You?</title>
+<style>
+  :root { --max: 860px; }
+  body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; margin: 0; background:#f7f7fb; color:#111; }
+  header { background:#111; color:#fff; padding:48px 20px; text-align:center; }
+  header h1 { margin:0 0 8px; font-size: clamp(28px, 4vw, 40px); }
+  header p { margin:0; opacity:.85 }
+  .wrap { max-width: var(--max); margin: 24px auto 80px; padding: 0 16px; }
+  .card { background:#fff; border-radius:14px; box-shadow:0 6px 24px rgba(0,0,0,.06); padding:22px; margin:16px 0; }
+  .q { font-weight:700; margin-bottom:12px; }
+  .opts label { display:block; padding:10px 12px; border:1px solid #e6e6ef; border-radius:10px; margin:8px 0; cursor:pointer; transition:.15s; }
+  .opts input { margin-right:8px; }
+  .opts label:hover { border-color:#c3c3d9; background:#fafaff; }
+  .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:16px; }
+  button { cursor:pointer; border:0; padding:14px 18px; border-radius:12px; font-weight:700; }
+  #seeResults { background:#3b5bff; color:#fff; }
+  #reset { background:#e9ecff; color:#1b1f3b; }
+  .result { display:none; }
+  .result.show { display:block; }
+  .grid { display:grid; grid-template-columns: 1fr; gap:16px; }
+  @media (min-width:760px){ .grid { grid-template-columns: 1fr 1fr; } }
+  .voice { border:1px solid #ececf5; border-radius:12px; padding:16px; }
+  .voice h3 { margin:0 0 6px; }
+  .tag { display:inline-block; font-size:12px; padding:4px 8px; border-radius:999px; background:#f1f2ff; color:#2732ff; margin-bottom:10px; }
+  footer { text-align:center; color:#666; font-size:13px; margin-top:24px; }
+  #winnerBlock { border-left:6px solid #3b5bff; padding-left:14px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Which ChatGPT Voice Are You?</h1>
+  <p>A highly scientific* personality quiz (*it is not scientific at all).</p>
+</header>
+
+<div class="wrap">
+  <form id="quiz" class="card">
+    <!-- Q1 -->
+    <div class="q">1) Pick a bread:</div>
+    <div class="opts">
+      <label><input type="radio" name="q1" value="Juniper">Garlic naan</label>
+      <label><input type="radio" name="q1" value="Maple">Banana bread</label>
+      <label><input type="radio" name="q1" value="Spruce">Whole grain (because “fiber”)</label>
+      <label><input type="radio" name="q1" value="Verse">French baguette you’ll definitely smack someone with</label>
+      <label><input type="radio" name="q1" value="Ember">Sourdough starter you “totally keep alive”</label>
+    </div>
+    <hr>
+
+    <!-- Q2 -->
+    <div class="q">2) Your toxic trait is:</div>
+    <div class="opts">
+      <label><input type="radio" name="q2" value="Juniper">Starting a new hobby every 3 weeks</label>
+      <label><input type="radio" name="q2" value="Ember">Editing other people’s grammar in texts</label>
+      <label><input type="radio" name="q2" value="Maple">Saying “I’m fine :)” when you are not fine :)</label>
+      <label><input type="radio" name="q2" value="Sol">Believing you’d thrive on <i>Survivor</i> despite crying when your phone dies</label>
+      <label><input type="radio" name="q2" value="Verse">Sending TikToks without checking if the other person is still watching the last one</label>
+    </div>
+    <hr>
+
+    <!-- Q3 -->
+    <div class="q">3) Pick your vacation vibe:</div>
+    <div class="opts">
+      <label><input type="radio" name="q3" value="Arbor">Cozy cabin with too many blankets</label>
+      <label><input type="radio" name="q3" value="Cove">Beach cottage with no cell service</label>
+      <label><input type="radio" name="q3" value="Spruce">Backpacking trip with “accidentally” too much gear</label>
+      <label><input type="radio" name="q3" value="Sol">Vegas, baby (but you’ll be asleep by 10:30)</label>
+      <label><input type="radio" name="q3" value="Ember">A historical walking tour you forced your friends to join</label>
+    </div>
+    <hr>
+
+    <!-- Q4 -->
+    <div class="q">4) Choose a snack:</div>
+    <div class="opts">
+      <label><input type="radio" name="q4" value="Ember">Charcuterie board (but it’s just cheese)</label>
+      <label><input type="radio" name="q4" value="Spruce">Trail mix but all the M&amp;Ms are already gone</label>
+      <label><input type="radio" name="q4" value="Cove">A suspiciously perfect smoothie bowl</label>
+      <label><input type="radio" name="q4" value="Juniper">Leftover pizza, cold, at 9 a.m.</label>
+      <label><input type="radio" name="q4" value="Maple">Popcorn “for dinner”</label>
+    </div>
+    <hr>
+
+    <!-- Q5 -->
+    <div class="q">5) How do you clap when something’s funny?</div>
+    <div class="opts">
+      <label><input type="radio" name="q5" value="Cove">Polite two-tap golf clap</label>
+      <label><input type="radio" name="q5" value="Sol">Hands fully above your head like you’re summoning rain</label>
+      <label><input type="radio" name="q5" value="Spruce">The one loud clap that silences the room</label>
+      <label><input type="radio" name="q5" value="Juniper">Laugh-crying so hard you can’t clap at all</label>
+      <label><input type="radio" name="q5" value="Verse">Clapping on beat… badly</label>
+    </div>
+
+    <div class="actions">
+      <button id="seeResults" type="button">See my result</button>
+      <button id="reset" type="reset">Reset</button>
+    </div>
+  </form>
+
+  <div id="results" class="card result">
+    <h2>Your ChatGPT Voice Match:</h2>
+    <div id="topVoice" class="tag"></div>
+    <div id="winnerBlock">
+      <p id="blurb" style="margin-top:6px"></p>
+    </div>
+
+    <h3 style="margin-top:22px;">How your answers matched</h3>
+    <div class="grid" id="allVoices">
+      <!-- filled by JS -->
+    </div>
+
+    <div class="actions">
+      <button id="copy" type="button" title="Copy result">Copy result</button>
+    </div>
+  </div>
+
+  <footer>P.S. If you got “Verse,” we expect a karaoke performance as proof.</footer>
+</div>
+
+<script>
+const DESCRIPTIONS_LONG = {
+  "Arbor": "You have eldest-sibling energy. You’re reliable, grounded, and somehow know how to fold a fitted sheet. People ask you to “just glance at this résumé” or “proofread my wedding vows.” Secretly dreams of running away to a cabin but would still alphabetize the spice rack there.",
+  "Cove": "You’d definitely survive in a seaside cottage with questionable Wi-Fi. Your vibe is “calm therapist who also surfs.” You journal, you meditate, you text back with proper punctuation. Probably owns at least one linen shirt and has strong opinions about oat milk brands.",
+  "Spruce": "If you picked Spruce, you’re the person in the friend group who insists “guys, let’s just split the bill evenly.” You own a reusable water bottle plastered with stickers that are lowkey your personality. When you clap, it’s loud enough to startle pets.",
+  "Maple": "Warm, kind, and a little nostalgic. If you were a TV trope, you’d be the wise best friend who gives heartfelt advice over pancakes. You cry at Pixar movies but also send the best memes. People trust you with their secrets and their sourdough starter.",
+  "Breeze": "You are the human equivalent of a lavender latte/cottagecore playlist. Friends describe you as “chill” and “wholesome,” but your search history reveals an alarming number of conspiracy rabbit holes. Probably owns too many blankets and is fine with it.",
+  "Juniper": "You’re the friend who suggests “just one drink” and somehow it’s 3 a.m. and you’ve adopted a raccoon. Chaotic good energy. Will absolutely send you a TikTok that’s “so you” while you’re still watching the one they just sent.",
+  "Ember": "You write emails with semicolons on purpose. Your playlists have titles like “Melancholy in C Minor.” People come to you for advice because you give main-character monologue vibes. Secretly you practice Oscar speeches in the shower (and schedule historical walking tours).",
+  "Sol": "You talk with your hands even when no one is watching. You say things like “let’s circle back” unironically. You believe you’d crush it on Survivor even though you once cried when your DoorDash was late. Your aura is dad jokes and sneakers with arch support.",
+  "Verse": "You’re here for ✨the drama✨. You love a good entrance, even into a Zoom call. If someone in the group chat says “spill,” you’re already typing a 10-part saga. Definitely the person who turns karaoke into a concert. Will monologue about their favorite TV show like it’s Shakespeare."
+};
+
+const DESCRIPTIONS_SHORT = {
+  "Arbor": "Reliable, grounded, fitted-sheet prodigy.",
+  "Cove": "Calm, linen-shirt vibes; says “let’s unpack that.”",
+  "Spruce": "Sticker-water-bottle practical; group chat wrangler.",
+  "Maple": "Wholesome, sentimental, Pixar-cryer, meme curator.",
+  "Breeze": "Cottagecore softie; blanket collector; secretly competitive.",
+  "Juniper": "Chaotic good; 3 a.m. raccoon adoption energy.",
+  "Ember": "Semicolons; poetic; dramatic in the best way.",
+  "Sol": "Dad-joke aura; hydrated; believes in circling back.",
+  "Verse": "Drama magnet; karaoke = stadium tour."
+};
+
+const ALL = Object.keys(DESCRIPTIONS_LONG);
+
+function calcScores() {
+  const scores = Object.fromEntries(ALL.map(v => [v, 0]));
+  const form = document.getElementById('quiz');
+  const fields = ['q1','q2','q3','q4','q5'];
+  for (const name of fields) {
+    const chosen = form.querySelector(`input[name="${name}"]:checked`);
+    if (chosen) scores[chosen.value] += 1;
+  }
+  return scores;
+}
+
+function topVoice(scores) {
+  let best = ALL[0], bestVal = -1;
+  for (const v of ALL) {
+    if (scores[v] > bestVal) { best = v; bestVal = scores[v]; }
+  }
+  return best;
+}
+
+function renderAll(scores) {
+  const wrap = document.getElementById('allVoices');
+  wrap.innerHTML = '';
+  const entries = ALL
+    .map(v => ({ v, n: scores[v] }))
+    .sort((a,b) => b.n - a.n || a.v.localeCompare(b.v));
+  for (const {v, n} of entries) {
+    const div = document.createElement('div');
+    div.className = 'voice';
+    div.innerHTML = `<h3>${v} <span style="opacity:.6;font-weight:400">(${n})</span></h3>
+      <p>${DESCRIPTIONS_SHORT[v]}</p>`;
+    wrap.appendChild(div);
+  }
+}
+
+document.getElementById('seeResults').addEventListener('click', () => {
+  const scores = calcScores();
+  const winner = topVoice(scores);
+  document.getElementById('topVoice').textContent = winner;
+  document.getElementById('blurb').textContent = DESCRIPTIONS_LONG[winner];
+  renderAll(scores);
+  document.getElementById('results').classList.add('show');
+  document.getElementById('results').scrollIntoView({behavior:'smooth'});
+});
+
+document.getElementById('reset').addEventListener('click', () => {
+  document.getElementById('results').classList.remove('show');
+});
+
+document.getElementById('copy').addEventListener('click', async () => {
+  const voice = document.getElementById('topVoice').textContent || 'A Mystery';
+  const paragraph = DESCRIPTIONS_LONG[voice] || '';
+  const txt = `I got: ${voice} — ${paragraph} #ChatGPTVoiceQuiz`;
+  try {
+    await navigator.clipboard.writeText(txt);
+    alert('Result copied! Paste anywhere.');
+  } catch {
+    alert('Copy failed—select the text manually in the results.');
+  }
+});
+</script>
+</body>
+</html>
