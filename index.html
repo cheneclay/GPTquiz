@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Find Your ChatGPT BFF (Work Edition)</title>
+<title>Which ChatGPT Voice Is Your Work Bestie?</title>
 <style>
   :root { --max: 860px; }
   body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; margin:0; background:#f7f7fb; color:#111; }
@@ -22,8 +22,8 @@
   #reset { background:#e9ecff; color:#1b1f3b; }
   .result { display:none; }
   .result.show { display:block; }
-  .grid { display:grid; grid-template-columns:1fr; gap:16px; }
-  @media (min-width:760px){ .grid { grid-template-columns:1fr 1fr; } }
+  .grid { display:grid; grid-template-columns: 1fr; gap:16px; }
+  @media (min-width:760px){ .grid { grid-template-columns: 1fr 1fr; } }
   .voice { border:1px solid #ececf5; border-radius:12px; padding:16px; }
   .voice h3 { margin:0 0 6px; }
   .tag { display:inline-block; font-size:12px; padding:4px 8px; border-radius:999px; background:#f1f2ff; color:#2732ff; margin-bottom:10px; }
@@ -31,102 +31,119 @@
   #winnerBlock { border-left:6px solid #3b5bff; padding-left:14px; }
   #lightning { display:none; border:2px dashed #c9ceff; background:#f6f7ff; }
   #tieNotice { font-size:14px; color:#3b5bff; margin:0 0 10px; font-weight:600; }
-  ul#why { margin:8px 0 0 18px; }
 </style>
 </head>
 <body>
 <header>
-  <h1>Find Your ChatGPT BFF (Work Edition)</h1>
-  <p>Interview your future AI coworker. We’ll match you with the voice that fits your workflow.</p>
+  <h1>Which ChatGPT Voice Is Your Work Bestie?</h1>
+  <p>Answer these totally normal, definitely professional questions to find your ideal AI coworker.</p>
 </header>
 
 <div class="wrap">
   <form id="quiz" class="card">
     <!-- Q1 -->
-    <div class="q">1) “Give us your 30-second self-intro.” You want a voice that says:</div>
+    <div class="q">1) You’ve hit a mental wall. You stare at the screen and sigh. You want ChatGPT to:</div>
     <div class="opts">
-      <label><input type="radio" name="q1" value="Juniper">“Idea fountain. I brainstorm first, organize later.”</label>
-      <label><input type="radio" name="q1" value="Ember">“Strategic writer with dry wit. I make decks sing.”</label>
-      <label><input type="radio" name="q1" value="Spruce">“Operational Swiss-army knife: checklists, templates, momentum.”</label>
-      <label><input type="radio" name="q1" value="Cove">“Calm operator. I reduce noise and clarify signals.”</label>
-      <label><input type="radio" name="q1" value="Arbor">“Decision-forward. Tell me the goal; I’ll plot the path.”</label>
-      <label><input type="radio" name="q1" value="Verse">“Story-led communicator. I make stakeholders care.”</label>
+      <label><input type="radio" name="q1" value="Juniper">Toss out 12 wild ideas and a few that might actually work.</label>
+      <label><input type="radio" name="q1" value="Cove">Ask smart questions until I find my own answer.</label>
+      <label><input type="radio" name="q1" value="Arbor">Cut through the fog with a step-by-step plan.</label>
+      <label><input type="radio" name="q1" value="Maple">Tell me it’s okay and remind me I’ve done harder things.</label>
+      <label><input type="radio" name="q1" value="Spruce">Turn my chaos into something that looks organized.</label>
+      <label><input type="radio" name="q1" value="Ember">Write a draft so clean I might actually tear up.</label>
+      <label><input type="radio" name="q1" value="Sol">Cheer me on like I just qualified for the finals.</label>
+      <label><input type="radio" name="q1" value="Verse">Make it sound dramatic enough for a movie trailer.</label>
+      <label><input type="radio" name="q1" value="Breeze">Help me lower the pressure and breathe again.</label>
     </div>
     <hr>
 
     <!-- Q2 -->
-    <div class="q">2) “How should I deliver your updates?”</div>
+    <div class="q">2) You need to sound smarter than you feel. Someone important needs something impressive. You ask ChatGPT to:</div>
     <div class="opts">
-      <label><input type="radio" name="q2" value="Maple">Clear, kind summaries with encouragement</label>
-      <label><input type="radio" name="q2" value="Spruce">Bullet points, owners, dates — five lines or less</label>
-      <label><input type="radio" name="q2" value="Breeze">Short notes, low pressure, steady cadence</label>
-      <label><input type="radio" name="q2" value="Sol">Quick wins + velocity chart; keep morale high</label>
-      <label><input type="radio" name="q2" value="Ember">Context first, then recommendations; receipts included</label>
-      <label><input type="radio" name="q2" value="Juniper">Rapid options A/B/C to unlock momentum</label>
+      <label><input type="radio" name="q2" value="Maple">Rewrite it like a professional, but keep my personality.</label>
+      <label><input type="radio" name="q2" value="Ember">Use big words responsibly.</label>
+      <label><input type="radio" name="q2" value="Spruce">Summarize it into three bullets that slap.</label>
+      <label><input type="radio" name="q2" value="Juniper">Add confidence, maybe a metaphor, and a touch of chaos.</label>
+      <label><input type="radio" name="q2" value="Arbor">Make it crisp and decisive like a briefing.</label>
+      <label><input type="radio" name="q2" value="Cove">Calm me down first, then fix it.</label>
+      <label><input type="radio" name="q2" value="Verse">Add a little sparkle—something people remember.</label>
+      <label><input type="radio" name="q2" value="Sol">Turn it into a rallying cry.</label>
+      <label><input type="radio" name="q2" value="Breeze">Keep it gentle. We’re not trying to scare anyone.</label>
     </div>
     <hr>
 
     <!-- Q3 -->
-    <div class="q">3) It’s 4:45pm and a deadline is… flambé. Your BFF should:</div>
+    <div class="q">3) You’re drowning in information. Too many tabs. Too many PDFs. You tell ChatGPT:</div>
     <div class="opts">
-      <label><input type="radio" name="q3" value="Sol">Rally the room, triage tasks, start a 25-minute sprint</label>
-      <label><input type="radio" name="q3" value="Arbor">Cut scope, sequence tasks, assign immediately</label>
-      <label><input type="radio" name="q3" value="Juniper">Throw a creative workaround and ship a v0 today</label>
-      <label><input type="radio" name="q3" value="Cove">Breathe, clarify requirements, clear blockers</label>
-      <label><input type="radio" name="q3" value="Spruce">Spin up a template, break into subtasks, track</label>
-      <label><input type="radio" name="q3" value="Ember">Reframe the problem; pull the highest-leverage lever</label>
+      <label><input type="radio" name="q3" value="Breeze">Just summarize this mess like you’re explaining it to a golden retriever.</label>
+      <label><input type="radio" name="q3" value="Spruce">Give me the key takeaways and action items.</label>
+      <label><input type="radio" name="q3" value="Cove">Tell me what actually matters and what I can ignore.</label>
+      <label><input type="radio" name="q3" value="Arbor">Categorize it and give me a simple plan.</label>
+      <label><input type="radio" name="q3" value="Verse">Extract the drama. What’s the plot twist?</label>
+      <label><input type="radio" name="q3" value="Juniper">Simplify it with analogies and maybe a laugh.</label>
+      <label><input type="radio" name="q3" value="Ember">Make it sound like I read and understood the whole thing.</label>
+      <label><input type="radio" name="q3" value="Sol">Turn this chaos into a pep talk.</label>
+      <label><input type="radio" name="q3" value="Maple">Summarize with kindness, like a friend who believes in me.</label>
     </div>
     <hr>
 
     <!-- Q4 -->
-    <div class="q">4) Default output you want most:</div>
+    <div class="q">4) You have to write something from scratch. You open a blank doc and whisper, “help.” ChatGPT should:</div>
     <div class="opts">
-      <label><input type="radio" name="q4" value="Verse">Executive-ready narrative with quotes & headlines</label>
-      <label><input type="radio" name="q4" value="Ember">Thoughtful write-up with sources and nuance</label>
-      <label><input type="radio" name="q4" value="Spruce">One-pager: boxes, bullets, repeatable</label>
-      <label><input type="radio" name="q4" value="Maple">Step-by-step guide with friendly notes</label>
-      <label><input type="radio" name="q4" value="Breeze">Lightweight checklist and reassurance</label>
-      <label><input type="radio" name="q4" value="Arbor">Decision memo: pros/cons and a clear call</label>
+      <label><input type="radio" name="q4" value="Juniper">Start typing something bold so I can edit it into sense later.</label>
+      <label><input type="radio" name="q4" value="Spruce">Give me a clean structure I can fill in.</label>
+      <label><input type="radio" name="q4" value="Cove">Ask me thoughtful questions until we land on the right tone.</label>
+      <label><input type="radio" name="q4" value="Verse">Draft something poetic but make it make sense.</label>
+      <label><input type="radio" name="q4" value="Ember">Start formal, then sneak in humor halfway through.</label>
+      <label><input type="radio" name="q4" value="Maple">Make it approachable, friendly, and warm.</label>
+      <label><input type="radio" name="q4" value="Sol">Set a timer, pump me up, and let’s get it done.</label>
+      <label><input type="radio" name="q4" value="Arbor">Hand me the framework, the checklist, and the next step.</label>
+      <label><input type="radio" name="q4" value="Breeze">Help me talk through it out loud until I’m unstuck.</label>
     </div>
     <hr>
 
     <!-- Q5 -->
-    <div class="q">5) Preferred feedback style from your AI coworker:</div>
+    <div class="q">5) You’re second-guessing everything. You ask ChatGPT to give you perspective, and it says:</div>
     <div class="opts">
-      <label><input type="radio" name="q5" value="Cove">Direct but gentle: specific, actionable, calm</label>
-      <label><input type="radio" name="q5" value="Maple">Support-first: celebrate wins, then tweak</label>
-      <label><input type="radio" name="q5" value="Sol">Energy-forward: “here’s what’s working — let’s go”</label>
-      <label><input type="radio" name="q5" value="Breeze">Low-pressure suggestions, not demands</label>
-      <label><input type="radio" name="q5" value="Ember">Socratic questions that sharpen thinking</label>
-      <label><input type="radio" name="q5" value="Juniper">Experimental: “what if we tried…” and sprint</label>
+      <label><input type="radio" name="q5" value="Arbor">Let’s review the facts before the feelings.</label>
+      <label><input type="radio" name="q5" value="Ember">You’re overthinking, but in a really intelligent way.</label>
+      <label><input type="radio" name="q5" value="Breeze">Everything you’re feeling is valid. Let’s breathe first.</label>
+      <label><input type="radio" name="q5" value="Maple">You’ve already done so much — I’m proud of you.</label>
+      <label><input type="radio" name="q5" value="Sol">Here’s a short list of wins you forgot to celebrate.</label>
+      <label><input type="radio" name="q5" value="Juniper">We could throw it all out and start fresh, just for fun.</label>
+      <label><input type="radio" name="q5" value="Spruce">Here’s the logic behind it, simplified and tidy.</label>
+      <label><input type="radio" name="q5" value="Verse">You’re fine. It’s just the capitalism talking.</label>
+      <label><input type="radio" name="q5" value="Cove">Let’s slow down, clarify what you actually want, and go from there.</label>
     </div>
     <hr>
 
     <!-- Q6 -->
-    <div class="q">6) Your meeting philosophy:</div>
+    <div class="q">6) You’re trying to learn something new. You tell ChatGPT: “Pretend I’m five.” It responds by:</div>
     <div class="opts">
-      <label><input type="radio" name="q6" value="Arbor">15-minute stand-ups; decisions made in-room</label>
-      <label><input type="radio" name="q6" value="Verse">Kickoff with a story; align heads and hearts</label>
-      <label><input type="radio" name="q6" value="Maple">Tight agenda, time-boxes, make space for voices</label>
-      <label><input type="radio" name="q6" value="Sol">Fast check-ins; leave with momentum</label>
-      <label><input type="radio" name="q6" value="Breeze">Async by default; meeting only if necessary</label>
-      <label><input type="radio" name="q6" value="Juniper">Whiteboard jam: messy then tidy</label>
+      <label><input type="radio" name="q6" value="Maple">Explaining it with a metaphor about snacks and friendship.</label>
+      <label><input type="radio" name="q6" value="Verse">Making it sound cooler than it probably is.</label>
+      <label><input type="radio" name="q6" value="Spruce">Giving me a bullet-point explainer (optional table).</label>
+      <label><input type="radio" name="q6" value="Cove">Breaking it down calmly with no judgment.</label>
+      <label><input type="radio" name="q6" value="Sol">Turning it into a motivational speech halfway through.</label>
+      <label><input type="radio" name="q6" value="Ember">Teaching how it works, then roasting how we overcomplicate it.</label>
+      <label><input type="radio" name="q6" value="Juniper">Sketching three ideas in parallel and letting me pick one.</label>
+      <label><input type="radio" name="q6" value="Arbor">Providing the steps, timeline, and follow-up homework.</label>
+      <label><input type="radio" name="q6" value="Breeze">Asking if I need to take a water break first.</label>
     </div>
 
     <!-- SECRET: Q7 (tie-breaker) -->
     <div id="lightning" class="card" style="display:none;margin-top:18px;">
-      <div id="tieNotice">Tie detected! Final interview prompt ⚡️</div>
-      <div class="q">7) The COO Slacks “need something by EOD” (vague). What do you do first?</div>
+      <div id="tieNotice">Tie detected! Lightning Round: choose your destiny ⚡️</div>
+      <div class="q">7) You’re running out of time. You say “I need this now!” and ChatGPT replies:</div>
       <div class="opts">
-        <label><input type="radio" name="q7" value="Maple">Draft a friendly status note clarifying goals; propose a small next step</label>
-        <label><input type="radio" name="q7" value="Verse">Frame a mini narrative that clarifies the ask and path</label>
-        <label><input type="radio" name="q7" value="Juniper">Mock a scrappy v0 so they can react fast</label>
-        <label><input type="radio" name="q7" value="Arbor">Reply with two options, owners, and deadlines</label>
-        <label><input type="radio" name="q7" value="Cove">Schedule a 10-minute huddle to calm & clarify scope</label>
-        <label><input type="radio" name="q7" value="Spruce">Open a task board with subtasks & a checklist</label>
-        <label><input type="radio" name="q7" value="Ember">Ask three clarifying questions; outline approach</label>
-        <label><input type="radio" name="q7" value="Sol">Promise a quick win by 5; rally resources</label>
-        <label><input type="radio" name="q7" value="Breeze">Acknowledge stress; strip out non-essentials; simplify</label>
+        <label><input type="radio" name="q7" value="Sol">We’ll make it work. Give me five minutes and a sense of purpose.</label>
+        <label><input type="radio" name="q7" value="Cove">Don’t panic. Let’s breathe, then prioritize.</label>
+        <label><input type="radio" name="q7" value="Spruce">I’ve already built a structure. You just fill in the blanks.</label>
+        <label><input type="radio" name="q7" value="Juniper">Let’s improvise and fix it later — chaos first, edits after.</label>
+        <label><input type="radio" name="q7" value="Ember">We can be brilliant and meet the deadline.</label>
+        <label><input type="radio" name="q7" value="Maple">You’ve done harder things today. This isn’t one of them.</label>
+        <label><input type="radio" name="q7" value="Arbor">Here’s what actually matters; skip the rest.</label>
+        <label><input type="radio" name="q7" value="Verse">Let’s make it sound like a grand finale.</label>
+        <label><input type="radio" name="q7" value="Breeze">Honestly, whatever happens, we’re still thriving.</label>
       </div>
     </div>
 
@@ -137,12 +154,10 @@
   </form>
 
   <div id="results" class="card result">
-    <h2>Your ChatGPT BFF Match:</h2>
+    <h2>Your Work Bestie Match:</h2>
     <div id="topVoice" class="tag"></div>
     <div id="winnerBlock">
       <p id="blurb" style="margin-top:6px"></p>
-      <h4 style="margin:12px 0 6px;">Why you two match:</h4>
-      <ul id="why"></ul>
     </div>
 
     <h3 style="margin-top:22px;">How your answers matched</h3>
@@ -153,11 +168,11 @@
     </div>
   </div>
 
-  <footer>PS: If your match is “Verse,” expect stakeholder theatrics to convert on slide 3.</footer>
+  <footer>PS: If your match is “Verse,” expect the drama to convert on slide 3.</footer>
 </div>
 
 <script>
-/* Long, funny descriptions (same as earlier) */
+/* Long, funny descriptions */
 const DESCRIPTIONS_LONG = {
   "Arbor": "You have eldest-sibling energy. You’re reliable, grounded, and somehow know how to fold a fitted sheet. People ask you to “just glance at this résumé” or “proofread my wedding vows.” Secretly dreams of running away to a cabin but would still alphabetize the spice rack there.",
   "Cove": "You’d definitely survive in a seaside cottage with questionable Wi-Fi. Your vibe is “calm therapist who also surfs.” You journal, you meditate, you text back with proper punctuation. Probably owns at least one linen shirt and has strong opinions about oat milk brands.",
@@ -184,86 +199,19 @@ const DESCRIPTIONS_SHORT = {
 
 const ALL = Object.keys(DESCRIPTIONS_LONG);
 
-/* Reasons shown under the winner */
-const REASONS = {
-  q1: {
-    Juniper:"You wanted an idea fountain who organizes after.",
-    Ember:"You asked for a strategic writer with edge.",
-    Spruce:"You picked operations and momentum over vibes.",
-    Cove:"You prefer calm signal over noise.",
-    Arbor:"You want decision-forward support.",
-    Verse:"You asked for story-led stakeholder magic."
-  },
-  q2: {
-    Maple:"You wanted clear, kind summaries.",
-    Spruce:"You chose bullets, owners, dates.",
-    Breeze:"You prefer short, low-pressure updates.",
-    Sol:"You like quick wins and hype.",
-    Ember:"You value context with receipts.",
-    Juniper:"You wanted fast A/B/C options."
-  },
-  q3: {
-    Sol:"You asked for triage + sprint energy.",
-    Arbor:"You prefer scope cuts and sequencing.",
-    Juniper:"You wanted a bold v0 workaround.",
-    Cove:"You chose calm clarify-and-unblock.",
-    Spruce:"You like checklists and tracking.",
-    Ember:"You value reframing for impact."
-  },
-  q4: {
-    Verse:"You wanted executive-ready narrative.",
-    Ember:"You asked for nuanced write-ups.",
-    Spruce:"You prefer one-page repeatables.",
-    Maple:"You chose friendly step-by-steps.",
-    Breeze:"You wanted lightweight reassurance.",
-    Arbor:"You picked a decision memo style."
-  },
-  q5: {
-    Cove:"You asked for specific, calm feedback.",
-    Maple:"You prefer celebrate-then-tweak.",
-    Sol:"You wanted energy and momentum.",
-    Breeze:"You asked for gentle suggestions.",
-    Ember:"You prefer Socratic sharpening.",
-    Juniper:"You chose experimental push."
-  },
-  q6: {
-    Arbor:"You wanted short, decisive stand-ups.",
-    Verse:"You chose alignment via story.",
-    Maple:"You prefer agenda + space for voices.",
-    Sol:"You wanted quick check-ins and go.",
-    Breeze:"You like async default, fewer meetings.",
-    Juniper:"You wanted whiteboard jams."
-  },
-  q7: {
-    Maple:"You like friendly clarity and small steps.",
-    Verse:"You want the ask framed as a crisp story.",
-    Juniper:"You prefer a quick prototype to react to.",
-    Arbor:"You like options, owners, and deadlines.",
-    Cove:"You prefer a calm scope huddle.",
-    Spruce:"You want subtasks and checklists.",
-    Ember:"You prefer smart questions + outline.",
-    Sol:"You like a visible win by 5.",
-    Breeze:"You want stress reduced and simplified."
-  }
-};
-
-/* Balance note: Across Q1–Q6, each voice appears exactly 4× (6×6=36 slots → 9×4=36). */
-
+/* Score the first 6 questions */
 function calcBaseScores() {
   const scores = Object.fromEntries(ALL.map(v => [v, 0]));
-  const chosen = {};
   const form = document.getElementById('quiz');
   const fields = ['q1','q2','q3','q4','q5','q6'];
   for (const name of fields) {
-    const picked = form.querySelector(`input[name="${name}"]:checked`);
-    if (picked) {
-      scores[picked.value] += 1;
-      chosen[name] = picked.value;
-    }
+    const chosen = form.querySelector(`input[name="${name}"]:checked`);
+    if (chosen) scores[chosen.value] += 1;
   }
-  return {scores, chosen};
+  return scores;
 }
 
+/* Find leaders & ties */
 function topTies(scores) {
   let max = -Infinity;
   for (const v of ALL) max = Math.max(max, scores[v]);
@@ -271,6 +219,7 @@ function topTies(scores) {
   return { leaders, max };
 }
 
+/* Render score breakdown */
 function renderAll(scores) {
   const wrap = document.getElementById('allVoices');
   wrap.innerHTML = '';
@@ -280,43 +229,21 @@ function renderAll(scores) {
   for (const {v, n} of entries) {
     const div = document.createElement('div');
     div.className = 'voice';
-    div.innerHTML = `<h3>${v} <span style="opacity:.6;font-weight:400">(${n.toFixed(2)})</span></h3>
+    div.innerHTML = `<h3>${v} <span style="opacity:.6;font-weight:400">(${n})</span></h3>
       <p>${DESCRIPTIONS_SHORT[v]}</p>`;
     wrap.appendChild(div);
   }
 }
 
-function reasonsForWinner(winner, chosen) {
-  const ul = document.getElementById('why');
-  ul.innerHTML = '';
-  let added = 0;
-  for (const q of Object.keys(chosen)) {
-    const v = chosen[q];
-    if (v === winner && REASONS[q] && REASONS[q][v]) {
-      const li = document.createElement('li');
-      li.textContent = REASONS[q][v];
-      ul.appendChild(li);
-      added++;
-    }
-  }
-  if (added === 0) {
-    const li = document.createElement('li');
-    li.textContent = "Your tie-breaker choice sealed the match.";
-    ul.appendChild(li);
-  }
-}
-
 let tieMode = false;
-let cachedBase = null;
+let cachedBaseScores = null;
 
-function showResults(finalScores, finalChosen) {
+function showResults(finalScores) {
   const { leaders } = topTies(finalScores);
   leaders.sort(); // deterministic fallback
   const winner = leaders[0];
-
   document.getElementById('topVoice').textContent = winner;
   document.getElementById('blurb').textContent = DESCRIPTIONS_LONG[winner];
-  reasonsForWinner(winner, finalChosen);
   renderAll(finalScores);
   document.getElementById('results').classList.add('show');
   document.getElementById('results').scrollIntoView({behavior:'smooth'});
@@ -326,30 +253,31 @@ document.getElementById('seeResults').addEventListener('click', () => {
   const btn = document.getElementById('seeResults');
 
   if (!tieMode) {
-    const {scores, chosen} = calcBaseScores();
-    cachedBase = {scores, chosen};
-    const { leaders } = topTies(scores);
+    const base = calcBaseScores();
+    cachedBaseScores = base;
+    const { leaders } = topTies(base);
 
     if (leaders.length > 1) {
+      // tie! reveal lightning round
       tieMode = true;
       document.getElementById('lightning').style.display = 'block';
       btn.textContent = 'Finish (Break the tie)';
       document.getElementById('lightning').scrollIntoView({behavior:'smooth'});
       return;
     } else {
-      showResults(scores, chosen);
+      showResults(base);
       return;
     }
   } else {
+    // tie mode: require q7
     const choice = document.querySelector('input[name="q7"]:checked');
     if (!choice) {
-      alert('Pick one final-round answer to break the tie!');
+      alert('Pick one Lightning Round answer to break the tie!');
       return;
     }
-    const finalScores = {...cachedBase.scores};
-    const finalChosen = {...cachedBase.chosen, q7: choice.value};
-    finalScores[choice.value] += 0.5; // tiny nudge to guarantee a winner
-    showResults(finalScores, finalChosen);
+    const final = { ...cachedBaseScores };
+    final[choice.value] += 0.5; // tiny nudge to guarantee a winner
+    showResults(final);
   }
 });
 
@@ -358,16 +286,16 @@ document.getElementById('reset').addEventListener('click', () => {
   document.getElementById('lightning').style.display = 'none';
   document.getElementById('seeResults').textContent = 'See my result';
   tieMode = false;
-  cachedBase = null;
+  cachedBaseScores = null;
+  // also clear q7 choice
   const q7 = document.querySelector('input[name="q7"]:checked');
   if (q7) q7.checked = false;
-  document.getElementById('why').innerHTML = '';
 });
 
 document.getElementById('copy').addEventListener('click', async () => {
   const voice = document.getElementById('topVoice').textContent || 'A Mystery';
   const paragraph = DESCRIPTIONS_LONG[voice] || '';
-  const txt = `My ChatGPT BFF (Work Edition) is: ${voice} — ${paragraph}`;
+  const txt = `My ChatGPT Work Bestie is: ${voice} — ${paragraph}`;
   try {
     await navigator.clipboard.writeText(txt);
     alert('Result copied! Paste anywhere.');
